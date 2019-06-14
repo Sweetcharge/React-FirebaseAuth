@@ -32,10 +32,10 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
     <ul>
         <li>
-            <Link className="text-link" to={ROUTES.SIGN_IN}>Sign In</Link>
+            <Link className="text-link" to={ROUTES.LANDING}>Landing</Link>
         </li>
         <li>
-            <Link className="text-link" to={ROUTES.LANDING}>Landing</Link>
+            <Link className="text-link" to={ROUTES.SIGN_IN}>Sign In</Link>
         </li>
     </ul>
 );
