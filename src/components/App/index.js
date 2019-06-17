@@ -21,17 +21,19 @@ class App extends React.Component {
         };
     }
 
-    componentWillMount() {
-            this.props.firebase.auth.onAuthStateChanged(authenticatedUser => {
-                    authenticatedUser ?
-                    this.setState({ authUser: authenticatedUser}) :
-                    this.setState({ authUser: null})
-            });
+    componentDidMount() {
+     this.listener = this.props.firebase.auth.onAuthStateChanged(
+            authenticatedUser => {
+            authenticatedUser ?
+            this.setState({ authUser: authenticatedUser}) :
+            this.setState({ authUser: null})
+            },
+        );    
     }
 
-    // componentWillMount() {
-    //     this.listener();
-    // }
+    componentWillMount() {
+        this.listener;
+    }
 
     render() {
         return (

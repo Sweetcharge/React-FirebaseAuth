@@ -27,7 +27,13 @@ class SignUp extends React.Component {
         e.preventDefault();
         firebase
             .doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
-            .then(authenticatedUser => {
+            .then(authUser => {
+                return firebase.user(authUser.user.uid).set({
+                            username: this.state.username,
+                            email: this.state.email
+                        });
+            })
+            .then(() => {
                 this.setState({
                     username: '',
                     email: '',

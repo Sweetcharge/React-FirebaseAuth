@@ -13,15 +13,14 @@ export default function Navigation(props) {
 
 const NavigationAuth = () => (
     <ul>
-        {console.log("Signed in!")}
-        <li>
-            <Link className="text-link" to={ROUTES.LANDING}>Landing</Link>
-        </li>
         <li>
             <Link className="text-link" to={ROUTES.HOME}>Home</Link>
         </li>
         <li>
             <Link className="text-link" to={ROUTES.ACCOUNT}>Account</Link>
+        </li>
+        <li>
+            <Link className="text-link" to={ROUTES.ADMIN}>Admin</Link>
         </li>
         <li>
             <SignOutWithRouter />
