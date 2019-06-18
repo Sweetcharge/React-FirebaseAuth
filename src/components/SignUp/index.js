@@ -28,11 +28,14 @@ class SignUp extends React.Component {
         firebase
             .doCreateUserWithEmailAndPassword(this.state.email, this.state.password)
             .then(authUser => {
-                return firebase.user(authUser.user.uid).set({
-                            username: this.state.username,
-                            email: this.state.email
-                        });
-            })
+                // Create a user in your Firebase realtime database
+                return firebase
+                  .user(authUser.user.uid)
+                  .set({
+                    username: this.state.username,
+                    email: this.state.email,
+                  });
+              })
             .then(() => {
                 this.setState({
                     username: '',
