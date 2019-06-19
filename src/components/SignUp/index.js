@@ -4,6 +4,9 @@ import { FirebaseContext } from "../Firebase";
 import * as ROUTES from '../../constants/routes';
 import { withRouter } from 'react-router-dom';
 
+
+import "../form-style.css";
+
 class SignUp extends React.Component {
     constructor() {
         super()
@@ -58,35 +61,35 @@ class SignUp extends React.Component {
             this.state.username === '' ||
             this.state.password === '';
         return (
-            <div>
+            <div className="SignUp">
                 <FirebaseContext.Consumer>
                     {firebase => (
                         <form onSubmit={e => {this.formSubmit(e, firebase)}}>
-                        <p>Sign Up</p>
-                        <label>Email</label>
-                        <input 
-                            type="text" 
-                            name="email"
-                            value={this.state.email}
-                            onChange={this.handleOnChange}
-                        />
-                        <label>Username</label>
-                        <input 
-                            type="text" 
-                            name="username"
-                            value={this.state.username}
-                            onChange={this.handleOnChange}
-                        />
-                        <label>Password</label>
-                        <input 
-                            type="password"
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleOnChange}
-                        />
-                        <button disabled={isInvalidInput}>Sign up</button>
-                        {this.state.error && <p className="errorMessage" >{this.state.error.message}</p>}
-                        <br/>
+                            <p className="formTitle">Sign Up</p>
+                            <label>Email</label>
+                            <input 
+                                type="text" 
+                                name="email"
+                                value={this.state.email}
+                                onChange={this.handleOnChange}
+                            />
+                            <label>Username</label>
+                            <input 
+                                type="text" 
+                                name="username"
+                                value={this.state.username}
+                                onChange={this.handleOnChange}
+                            />
+                            <label>Password</label>
+                            <input 
+                                type="password"
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleOnChange}
+                            />
+                            <button disabled={isInvalidInput}>Sign up</button>
+                            {this.state.error && <p className="errorMessage" >{this.state.error.message}</p>}
+                            <br/>
                         </form>
                         )
                     }

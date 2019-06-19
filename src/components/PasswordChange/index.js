@@ -1,4 +1,5 @@
 import React from "react";
+import "../form-style.css"
 
 import { FirebaseContext } from "../Firebase";
 
@@ -43,12 +44,16 @@ class PasswordChange extends React.Component {
 
 
     render() {
+        const isInvalidInput = 
+            this.state.passwordOne == '' ||
+            this.state.passwordTwo == '' ||
+            this.state.passwordOne != this.state.passwordTwo;
         return (
-            <div>
+            <div className="PasswordChange">
                 <FirebaseContext.Consumer>
                     {firebase => (
                         <form onSubmit={e => (this.formSubmit(e, firebase))}>
-                            <p className="changePasswordLabel">Change Password</p>
+                            <p className="formTitle">Change Password</p>
                             <label>New password</label>
                             <input 
                                 type="password" 
@@ -63,7 +68,7 @@ class PasswordChange extends React.Component {
                                 value={this.state.passwordTwo}
                                 onChange={this.handleOnChange}
                             />
-                            <button>Change your password</button>
+                            <button disabled={isInvalidInput}>Change password</button>
                             <br/>
                             {this.state.error && <p className="errorMessage" >{this.state.error.message}</p>}
                         </form>

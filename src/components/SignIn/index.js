@@ -1,5 +1,5 @@
 import React from "react";
-import "./sign-in-style.css";
+import "../form-style.css";
 
 import { Link, withRouter } from 'react-router-dom';
 import { FirebaseContext } from '../Firebase';
@@ -47,13 +47,13 @@ class SignIn extends React.Component {
             this.state.email === '' ||
             this.state.password === '';
         return (
-            <div>
+            <div className="SignIn">
                 <FirebaseContext.Consumer>
                 {firebase => 
                     (
                         <div>
                             <form onSubmit={e => (this.formSubmit(e, firebase))}>
-                                <p>Sign in</p>
+                                <p className="formTitle">Sign in</p>
                                 <label>Email</label>
                                 <input 
                                     type="text" 
@@ -71,10 +71,10 @@ class SignIn extends React.Component {
                                 <button disabled={isInvalidInput}>Sign in</button>
                                 <br/>
                                 {this.state.error && <p className="errorMessage" >{this.state.error.message}</p>}
-                                <Link className="forgotLink" to={ROUTES.PASSWORD_FORGET}>Forgot your password?</Link>
+                                <Link className="sign-in-forgot-link" to={ROUTES.PASSWORD_FORGET}>Forgot your password?</Link>
                             </form>
-                            <p className="signupText">Don't have an account?
-                            <Link className="signupLink" to={ROUTES.SIGN_UP}> Sign up</Link>
+                            <p className="sign-in-signup-title">Don't have an account? 
+                            <Link className="sign-in-signup-link"to={ROUTES.SIGN_UP}> Sign up</Link>
                             </p>
                         </div>
                     )

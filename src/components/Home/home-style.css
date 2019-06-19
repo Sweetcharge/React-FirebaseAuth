@@ -1,0 +1,83 @@
+.Home {
+    background-color: #7E7F9A;
+    height: calc(100vh - 51px);
+    text-align: center;
+}
+
+.home-label {
+    font-family: "HelveticaNeue-Light";
+    font-size: 100px;
+    top: 50px;
+    color: #272838;
+}
+
+.home-acc-link, .home-admin-link {
+    display: inline-block;
+    top: 30%;
+    position: absolute;
+    transform: translateY(-30%);
+    padding: 100px 150px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-family: "HelveticaNeue-Thin";
+    border-radius: 30px;
+    box-shadow: 0px 0px 15px 1px #272838;
+    transition: 0.5s ease-out;
+}
+
+.home-acc-link {
+    left: 30%;
+    transform: translateX(-30%);
+    background-color: #272838;
+}
+
+.home-admin-link {
+    right: 30%;
+    transform: translateX(30%);
+    background-color: #272838;
+}
+
+.home-acc-link:hover, .home-admin-link:hover {
+    transform: scale(1.25);
+}
+
+.home-action-inc, .home-action-dec {
+    bottom: 25%;
+    position: absolute;
+    transform: translateY(25%);
+    padding: 10px 25px;
+    background-color: rgb(240, 12, 80);
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+    box-shadow: 0px 0px 20px 1px rgb(77, 7, 28);
+    transition: 0.15s ease-in-out;
+}
+
+.home-action-inc:hover, .home-action-dec:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+.home-action-inc:focus, .home-action-dec:focus {
+    outline: none;
+}
+
+.home-action-inc {
+    left: 40%;
+    transform: translateX(-40%);
+}
+
+.home-action-dec {
+    right: 40%;
+    transform: translateX(40%);
+}
+
+.home-user-score {
+    margin-top: 75px;
+    font-family: "HelveticaNeue-Thin";
+}
+
+

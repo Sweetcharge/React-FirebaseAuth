@@ -1,26 +1,26 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import "./style.css";
+import "./navigationStyle.css";
 
 import SignOutWithRouter from '../SignOut';
 import * as ROUTES from '../../constants/routes';
 
 export default function Navigation(props) {
     return (
-        <div>{props.authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
+        <div className="Navigation">{props.authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
     )
 }
 
 const NavigationAuth = () => (
     <ul>
         <li>
-            <Link className="text-link" to={ROUTES.HOME}>Home</Link>
+            <Link className="navigation-link" to={ROUTES.HOME}>Home</Link>
         </li>
         <li>
-            <Link className="text-link" to={ROUTES.ACCOUNT}>Account</Link>
+            <Link className="navigation-link" to={ROUTES.ACCOUNT}>Account</Link>
         </li>
         <li>
-            <Link className="text-link" to={ROUTES.ADMIN}>Admin</Link>
+            <Link className="navigation-link" to={ROUTES.ADMIN}>Admin</Link>
         </li>
         <li>
             <SignOutWithRouter />
@@ -31,10 +31,13 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
     <ul>
         <li>
-            <Link className="text-link" to={ROUTES.LANDING}>Landing</Link>
+            <Link className="navigation-link" to={ROUTES.LANDING}>Home</Link>
         </li>
         <li>
-            <Link className="text-link" to={ROUTES.SIGN_IN}>Sign In</Link>
+            <Link className="navigation-link" to={ROUTES.SIGN_IN}>Sign In</Link>
+        </li>
+        <li>
+            <Link className="navigation-link" to={ROUTES.SIGN_UP}>Sign Up</Link>
         </li>
     </ul>
 );

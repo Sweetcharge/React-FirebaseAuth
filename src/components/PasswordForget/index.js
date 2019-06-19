@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FirebaseContext } from "../Firebase";
+import "../form-style.css";
 
 
 class PasswordForget extends React.Component {
@@ -41,11 +42,11 @@ class PasswordForget extends React.Component {
         const isInvalidInput = 
             this.state.email === '';
         return (
-            <div>
+            <div className="PasswordForget">
                 <FirebaseContext.Consumer>
                     {firebase => (
                         <form onSubmit={e => (this.formSubmit(e, firebase))}>
-                            <p className="forgotPasswordLabel">Forgot password</p>
+                            <p className="formTitle">Forgot password</p>
                             <label>Email</label>
                             <input 
                                 type="text" 
@@ -53,7 +54,7 @@ class PasswordForget extends React.Component {
                                 value={this.state.email}
                                 onChange={this.handleOnChange}
                             />
-                            <button>Retrieve password</button>
+                            <button disabled={isInvalidInput}>Retrieve password</button>
                             <br/>
                             {this.state.error && <p className="errorMessage" >{this.state.error.message}</p>}
                         </form>

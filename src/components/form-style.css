@@ -1,0 +1,156 @@
+.SignIn, .SignUp, .PasswordForget {
+    height: calc(100vh - 51px);
+    text-align: center;
+    background-color: rgb(40, 40, 40);
+    position: relative;
+    background: url('formBG.jpg') no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+
+
+.SignIn form, .SignUp form {
+    height: 450px;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 20px 2px black;
+    padding: 10px;
+    background: rgb(34, 34, 34);
+}
+
+.PasswordChange form, .PasswordForget form {
+    display: inline-block;
+}
+
+.PasswordForget form {
+    height: 450px;
+    width: 350px;
+    top: 50%;
+    right: 30%;
+    position: absolute;
+    transform: translate(30%, -55%);
+    box-shadow: 0px 0px 20px 2px black;
+    padding: 10px;
+    background: rgb(34, 34, 34);
+}
+
+.PasswordChange form {
+    z-index: 2;
+    text-align: center;
+    color: white;
+    height: 450px;
+    width: 350px;
+    top: 50%;
+    left: 30%;
+    position: absolute;
+    transform: translate(-30%, -50%);
+    box-shadow: 0px 0px 20px 2px black;
+    padding: 10px;
+    background: rgb(34, 34, 34);
+}
+
+
+.SignUp form {
+    height: 500px;
+}
+
+.SignIn form input, .SignUp form input, .PasswordForget form input, .PasswordChange form input {
+    display: block;
+    padding: 10px 10px;
+    font-size: 18px;
+    color: rgb(29, 29, 29);
+    width: 80%;
+    border: none;
+    border-radius: 20px;
+    margin: 0px auto;
+    border: solid 3px rgb(29, 29, 29);
+}
+
+.SignIn form input:focus, .SignUp form input:focus, .PasswordForget form input:focus, .PasswordChange form input:focus {
+    outline: none;
+    border: solid 3px rgb(240, 12, 80);
+    box-shadow: 0px 0px 20px 2px black;
+    transition: 0.25s ease-in-out;
+}
+
+.SignIn form label:nth-child(2), .SignUp form label:nth-child(2), .PasswordForget form label:nth-child(2), .PasswordChange form label:nth-child(2){
+    margin-top: 100px;
+}
+
+.SignIn form label, .SignUp form label, .PasswordForget form label, .PasswordChange form label {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 0px;
+    font-size: 14px;
+    font-family: "HelveticaNeue-light";
+    color: rgb(111, 111, 111); 
+}
+
+.SignIn form button, .SignUp form button, .PasswordForget form button, .PasswordChange form button {
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px 0px 20px 0px;
+    font-size: 15px;
+    border-radius: 20px;
+    background-color: rgb(240, 12, 80);
+    border: none;
+    color: white;
+    width: 30%;
+    box-shadow: 0px 0px 20px 2px black;
+}
+
+.SignIn form button:disabled, .SignUp form button:disabled, .PasswordForget form button:disabled, .PasswordChange form button:disabled {
+    background-color: rgb(131, 94, 105);
+    transition: 0.5s;
+}
+
+.SignIn div .formTitle, .SignUp .formTitle, .PasswordForget .formTitle, .PasswordChange .formTitle{
+    color: white;
+    font-size: 45px;
+    top: 0;
+    border-bottom: solid 2px rgb(240, 12, 80);
+}
+
+.PasswordForget .formTitle, .PasswordChange .formTitle {
+    font-size: 35px;
+    top: 20px;
+}
+
+.sign-in-forgot-link {
+    font-size: 15px;
+}
+
+.sign-in-forgot-link:hover {
+    color: rgb(240, 12, 80);
+    transition: 0.25s;
+}
+
+.sign-in-forgot-link, .sign-in-signup-link, .sign-in-signup-title {
+    color: white;
+    text-decoration: none;
+}
+
+.sign-in-signup-link, .sign-in-signup-title {
+    font-size: 18px;
+    margin-top: 80px;
+}
+
+.sign-in-signup-link {
+    font-family: "HelveticaNeue-Bold";
+    color: white;
+}
+
+.sign-in-signup-link:hover {
+    color: rgb(240, 12, 80);
+    transition: 0.25s;
+}
+
+.errorMessage {
+    margin-top: 75px;
+    font-size: 15px;
+    width: 80%;
+    color: rgb(255, 98, 98);
+}
