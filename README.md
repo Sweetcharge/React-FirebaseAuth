@@ -10,6 +10,12 @@ However, I included the Score counter as a way to test what I've learned from th
 
 Live demo: https://sweetcharge.github.io/React-FirebaseAuth/
 
+To run locally:
+
+- Download/clone the project
+- cd to the project directory 
+- Via terminal, run the command "npm start"
+
 NOTE: This is not mobile friendly
 
 
