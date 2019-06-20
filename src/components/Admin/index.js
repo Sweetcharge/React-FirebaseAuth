@@ -1,4 +1,5 @@
 import React from "react";
+import './admin-style.css';
 
 import { withFirebase } from '../Firebase';
 
@@ -17,8 +18,6 @@ class Admin extends React.Component {
         })
 
         this.props.firebase.users().on('value', snapshot => {
-            const userObject = snapshot.val()
-
             const usersObject = snapshot.val();
 
             const usersList = 
@@ -43,32 +42,50 @@ class Admin extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="Admin">
                 <h1>Admin</h1>
                 {this.state.loading && <div>Loading ...</div>}
-
-                <UserList users={this.state.users} />
+                <ul className="admin-list-container">
+                  <li> 
+                    <span>
+                      <strong>ID</strong>
+                    </span>
+                    <span>
+                      <strong>E-Mail</strong>
+                    </span>
+                    <span>
+                      <strong>Username</strong>
+                    </span>
+                    <span>
+                      <strong>Score</strong>
+                    </span>
+                  </li>
+                  <UserList users={this.state.users} />
+                </ul>
             </div>
         )
     }
 }
 
 const UserList = ({ users }) => (
-    <ul>
+    <div>
       {users.map(user => (
-        <li key={user.uid}>
+        <li className="admin-list-item" key={user.uid}>
           <span>
-            <strong>ID:</strong> {user.uid}
+            {user.uid}
           </span>
           <span>
-            <strong>E-Mail:</strong> {user.email}
+            {user.email}
           </span>
           <span>
-            <strong>Username:</strong> {user.username}
+            {user.username}
+          </span>
+          <span>
+            {user.score}
           </span>
         </li>
       ))}
-    </ul>
+    </div>
   );
 
 

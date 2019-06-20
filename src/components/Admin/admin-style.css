@@ -1,0 +1,39 @@
+.Admin {
+    background-color: #0e3737;
+    height: calc(100vh - 51px);
+    padding: 0px;
+    color: white;
+}
+
+.Admin h1 {
+    margin: 0px;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.admin-list-container {
+    margin-top: 0;
+    padding: 15px;
+    list-style: none;
+    height: 75vh;
+    overflow: auto;
+}
+
+
+.admin-list-container li {
+    margin: 0px auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-family: "HelveticaNeue-Light";
+    font-size: 15px;
+}
+
+
+.admin-list-container div li {
+    padding: 15px 10px;
+    margin: 5px auto;
+    border: solid 0.5px #3d9898;
+    background-color: #1c5b5b;
+    border-radius: 5px;
+}

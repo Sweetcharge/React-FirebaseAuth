@@ -17,7 +17,7 @@ class PasswordChange extends React.Component {
 
     formSubmit(e, firebase) {
         e.preventDefault();
-        if(this.state.passwordOne != this.state.passwordTwo) {
+        if(this.state.passwordOne !== this.state.passwordTwo) {
             alert("Passwords are different, try again");
         } else {
             firebase.doPasswordUpdate(this.state.passwordOne)
@@ -45,9 +45,9 @@ class PasswordChange extends React.Component {
 
     render() {
         const isInvalidInput = 
-            this.state.passwordOne == '' ||
-            this.state.passwordTwo == '' ||
-            this.state.passwordOne != this.state.passwordTwo;
+            this.state.passwordOne === '' ||
+            this.state.passwordTwo === '' ||
+            this.state.passwordOne !== this.state.passwordTwo;
         return (
             <div className="PasswordChange">
                 <FirebaseContext.Consumer>

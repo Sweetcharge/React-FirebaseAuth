@@ -5,26 +5,21 @@ import { withRouter } from 'react-router-dom';
 import * as ROUTES from "../../constants/routes";
 
 class SignOut extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
-        this.SignOut = this.SignOut.bind(this);
-    }
-
-    SignOut(e, firebase) {
-        e.preventDefault;
+    SignOut = (e, firebase) => {
+        e.preventDefault();
         firebase
-            .doSignOut()
-            .then(authUser => {
-                this.props.history.push(ROUTES.LANDING);
-            })
+        .doSignOut()
+        .then(authUser => {
+            this.props.history.push(ROUTES.LANDING);
+        })
     }
+    
 
     render() {
         return (
             <FirebaseContext.Consumer>
                 {firebase => (
-                    <button onClick={e => (e, this.SignOut(e, firebase))}> Sign out </button>
+                    <button onClick={e => this.SignOut(e, firebase)}> Sign out </button>
                 )}
                 
             </FirebaseContext.Consumer>

@@ -11,7 +11,7 @@ class Landing extends React.Component {
             <div className="landing-container">
                 <div className="landing-hero">
                     <p className="landing-title">React-Firebase-Login</p>
-                    <img src={require('./hero.jpg')} />
+                    <img src={require('./hero.jpg')} alt="" />
                 </div>
                 <br></br>
                 <Link className="landing-actions" to={ROUTES.SIGN_IN}>Sign in</Link>

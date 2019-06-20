@@ -37,6 +37,7 @@ class SignUp extends React.Component {
                   .set({
                     username: this.state.username,
                     email: this.state.email,
+                    score: 0
                   });
               })
             .then(() => {
