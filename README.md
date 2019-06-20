@@ -9,6 +9,7 @@ However, I included the Score counter as a way to test what I've learned from th
 
 
 Live demo: https://sweetcharge.github.io/React-FirebaseAuth/
+
 NOTE: This is not mobile friendly
 
 
